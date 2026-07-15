@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Meme Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>😂 AI Meme Generator</h1>
+
+    <!-- Upload -->
+    <div id="uploadZone" class="upload-box">
+        <h2>Click or Drop an Image</h2>
+        <p>PNG, JPG or JPEG</p>
+
+        <input type="file" id="imageInput" hidden>
+    </div>
+
+    <div id="previewContainer" style="display:none;">
+        <img id="uploadedImage">
+    </div>
+
+    <div class="buttons">
+
+        <button id="analyzeBtn">Analyze Image</button>
+
+        <button id="clearBtn">Clear</button>
+
+    </div>
+
+    <!-- Analysis -->
+
+    <section id="analysisSection" style="display:none;">
+
+        <div id="analysisLoading">
+
+            <h3>Analyzing...</h3>
+
+            <p id="analysisStatus">Starting...</p>
+
+        </div>
+
+        <div id="analysisResults" style="display:none;">
+
+            <h2>Detected Tags</h2>
+
+            <div id="tagsContainer"></div>
+
+        </div>
+
+    </section>
+
+    <!-- Captions -->
+
+    <section id="captionsSection" style="display:none;">
+
+        <h2>Choose a Caption</h2>
+
+        <div id="captionsGrid"></div>
+
+    </section>
+
+    <!-- Editor -->
+
+    <section id="editorSection" style="display:none;">
+
+        <div class="editor">
+
+            <textarea id="captionText"></textarea>
+
+            <label>Position</label>
+
+            <select id="textPosition">
+
+                <option value="top">Top</option>
+
+                <option value="center">Center</option>
+
+                <option value="bottom">Bottom</option>
+
+                <option value="both">Top & Bottom</option>
+
+            </select>
+
+            <label>Font Size</label>
+
+            <input type="range" id="fontSize" min="20" max="80" value="40">
+
+            <span id="fontSizeValue">40</span>
+
+            <label>Font</label>
+
+            <select id="fontStyle">
+
+                <option>Impact</option>
+
+                <option>Arial</option>
+
+                <option>Verdana</option>
+
+                <option>Georgia</option>
+
+            </select>
+
+            <label>Stroke Width</label>
+
+            <input type="range" id="strokeWidth" min="1" max="10" value="4">
+
+            <span id="strokeWidthValue">4</span>
+
+            <label>Line Spacing</label>
+
+            <input type="range" id="lineSpacing" min="1" max="2" step="0.1" value="1.2">
+
+            <span id="lineSpacingValue">1.2</span>
+
+            <label>Alignment</label>
+
+            <select id="textAlign">
+
+                <option value="center">Center</option>
+
+                <option value="left">Left</option>
+
+                <option value="right">Right</option>
+
+            </select>
+
+            <div class="colors">
+
+                <button class="color-btn active" data-color="#FFFFFF"></button>
+
+                <button class="color-btn" data-color="#FFD700"></button>
+
+                <button class="color-btn" data-color="#00FF00"></button>
+
+                <button class="color-btn" data-color="#00BFFF"></button>
+
+                <button class="color-btn" data-color="#FF69B4"></button>
+
+            </div>
+
+            <label>
+
+                <input type="checkbox" id="livePreview" checked>
+
+                Live Preview
+
+            </label>
+
+            <button id="updateMemeBtn">Update Preview</button>
+
+        </div>
+
+        <canvas id="memeCanvas"></canvas>
+
+        <div class="buttons">
+
+            <button id="downloadBtn">Download Meme</button>
+
+            <button id="createAnotherBtn">Create Another</button>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
